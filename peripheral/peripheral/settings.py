@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    'myapp.apps.MyappConfig',  # Add this
 ]
 
 MIDDLEWARE = [
@@ -52,10 +52,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'peripheral.urls'
 
+import os
+from pathlib import Path
+
+# Base directory (already defined in your settings)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Add this
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
