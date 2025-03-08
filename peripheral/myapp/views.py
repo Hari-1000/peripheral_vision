@@ -3,8 +3,16 @@ from .models import VisionTestResult
 import json
 from django.http import JsonResponse
 
+def start_page(request):
+    return render(request, 'start.html')
+
 def test_page(request):
-    return render(request, 'test.html')  # Changed from 'myapp/test.html'
+    return render(request, 'test.html')
+
+def report_page(request):
+    # Fetch the latest result for simplicity (improve with user sessions later)
+    latest_result = VisionTestResult.objects.last()
+    return render(request, 'report.html', {'result': latest_result})
 
 def save_result(request):
     if request.method == 'POST':
