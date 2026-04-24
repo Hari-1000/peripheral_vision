@@ -1,0 +1,77 @@
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #eee; }
+
+.distance-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.distance-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.distance-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+.distance-close:hover { color: #eee; background: rgba(255,255,255,0.08); }
+
+.distance-card h2 { margin: 0 0 0.5rem; }
+.distance-card p { color: #888; margin: 0 0 1.5rem; }
+
+.video-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: #111;
+}
+
+.webcam-feed {
+  width: 100%;
+  display: block;
+  transform: scaleX(-1); /* mirror */
+}
+
+.distance-status {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.distance-value {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-proceed {
+  background: #4f8ef7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-proceed:disabled { background: #2a2a2a; color: #555; cursor: not-allowed; }
+.btn-proceed:not(:disabled):hover { background: #3a7de0; }
